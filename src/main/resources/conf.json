@@ -1,0 +1,26 @@
+{
+  "ChatSettings": {
+    "enabled": true,
+    "playerchatformat": "%player_name% : %message%",
+    "allowplayercollorcodes": true,
+    "allowplayerplaceholders": false,
+    "chatItemListing": true,
+    "chatItemListingFormat": "[item]",
+    "chatItemListingReplace": "%material%",
+    "blockedWords": [
+      "nigger"
+    ],
+    "bleurBlockedWords": true,
+    "bleurToken": "*",
+    "blockedPunishement": [
+      "mute %player_name% 20m banned words"
+    ],
+    "blockedMessage": [
+      "---------blocked--------",
+      "you are not allowed to use %word%",
+      "Punishement: 20 minute mute",
+      "-------------------------"
+    ]
+
+  }
+}

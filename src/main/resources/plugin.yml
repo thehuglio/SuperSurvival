@@ -1,0 +1,6 @@
+name: SuperSurvival
+version: '${version}'
+main: org.hugliodev.supersurvival.Main
+api-version: '1.21'
+depend:
+  - PlaceholderAPI
