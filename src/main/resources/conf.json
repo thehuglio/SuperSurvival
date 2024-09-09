@@ -20,7 +20,7 @@
       "you are not allowed to use %word%",
       "Punishement: 20 minute mute",
       "-------------------------"
-    ]
-
+    ],
+    "clearChatEnters": 20
   }
 }

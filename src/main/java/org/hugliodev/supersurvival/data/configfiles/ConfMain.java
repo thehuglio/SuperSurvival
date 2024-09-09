@@ -17,4 +17,5 @@ public class ConfMain {
     public static String bleurToken;
     public static List<String> blockedPunishement;
     public static ParseMessage blockedMessage;
+    public static String clearChatEnters;
 }

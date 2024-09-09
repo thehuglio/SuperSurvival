@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DataManager {
-    private static HashMap<String,IData> dataHashMap = new HashMap<>();
+    final private static HashMap<String,IData> dataHashMap = new HashMap<>();
     public static void reload() {
         for (Map.Entry<String, IData> data : dataHashMap.entrySet()) {
             data.getValue().reload();

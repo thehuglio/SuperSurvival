@@ -5,6 +5,7 @@ import com.google.gson.*;
 import java.io.File;
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
 public abstract class AData implements IData {
@@ -40,7 +41,7 @@ public abstract class AData implements IData {
         if (!file.exists()) {
             try {
                 Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().serializeNulls().create();
-                PrintWriter pw = new PrintWriter(file, "UTF-8");
+                PrintWriter pw = new PrintWriter(file, StandardCharsets.UTF_8);
                 pw.write(gson.toJson(getData()));
                 pw.flush();
                 pw.close();

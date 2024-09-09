@@ -1,9 +1,11 @@
 package org.hugliodev.supersurvival.commands.admin;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IAdminCommand;
+import org.hugliodev.supersurvival.data.configfiles.ConfMain;
 
 import java.util.List;
 
@@ -53,6 +55,6 @@ public class CmdClearchat implements IAdminCommand {
         execute();
     }
     private void execute() {
-        //ToDo link config to send certain amount of \n in the chat
+        Bukkit.getOnlinePlayers().forEach(player -> player.sendMessage(ConfMain.clearChatEnters));
     }
 }

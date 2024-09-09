@@ -15,8 +15,8 @@ import java.util.HashMap;
 
 public class CommandManager {
 
-    private static CommandMap playerCommandMap = new PlayerCommandRegister();
-    private static CommandMap adminCommandMap = new AdminCommandRegister();
+    final private static CommandMap playerCommandMap = new PlayerCommandRegister();
+    final private static CommandMap adminCommandMap = new AdminCommandRegister();
     public static void reload(JavaPlugin plugin) {
         for (IMainCommand command : playerCommandMap.commandList) {
             System.out.println(command.getCommand());

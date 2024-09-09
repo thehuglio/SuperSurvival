@@ -36,6 +36,9 @@ public class ConfMain extends AConfig {
 
             blockedPunishement = new ArrayList<>();
             chatSettings.get("blockedPunishement").getAsJsonArray().forEach(jsonElement -> blockedPunishement.add(jsonElement.getAsString()));
+            StringBuilder s = new StringBuilder();
+            s.append("\n".repeat(Math.max(0, chatSettings.get("clearChatEnters").getAsInt())));
+            clearChatEnters = s.append("The chat has been cleared").toString();
             return true;
         } catch (Exception e) {
             throw e;

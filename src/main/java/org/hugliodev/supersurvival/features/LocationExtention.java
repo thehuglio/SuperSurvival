@@ -31,7 +31,7 @@ public class LocationExtention extends org.bukkit.Location {
     }
     public HashMap<String,Object> toHash() {
         HashMap<String,Object> temp = new HashMap<>();
-        temp.put("world", Objects.requireNonNull(super.getWorld()).getUID());
+        temp.put("world", Objects.requireNonNull(super.getWorld().getUID()));
         temp.put("x",super.getX());
         temp.put("y",super.getY());
         temp.put("z",super.getZ());
