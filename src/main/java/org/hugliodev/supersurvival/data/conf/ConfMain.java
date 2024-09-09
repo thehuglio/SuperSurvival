@@ -1,9 +1,6 @@
 package org.hugliodev.supersurvival.data.conf;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import org.bukkit.Bukkit;
-import org.checkerframework.checker.units.qual.A;
 import org.hugliodev.supersurvival.Util.ParseMessage;
 import org.hugliodev.supersurvival.data.AConfig;
 import static org.hugliodev.supersurvival.data.configfiles.ConfMain.*;
@@ -11,7 +8,6 @@ import static org.hugliodev.supersurvival.data.configfiles.ConfMain.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Level;
 
 public class ConfMain extends AConfig {
     @Override
@@ -41,7 +37,8 @@ public class ConfMain extends AConfig {
             clearChatEnters = s.append("The chat has been cleared").toString();
             return true;
         } catch (Exception e) {
-            throw e;
+            System.out.println(e);
+            return false;
         }
     }
 

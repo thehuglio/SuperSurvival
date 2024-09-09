@@ -5,13 +5,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerTeleportEvent;
 import org.hugliodev.supersurvival.features.DataClass;
 import org.hugliodev.supersurvival.features.LocationExtention;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
-import java.util.Map;
 
 public class PlayerData implements DataClass {
     private static HashMap<OfflinePlayer,Data> playerDataHashMap;
@@ -47,7 +45,7 @@ public class PlayerData implements DataClass {
     @Override
     public HashMap<String,Object> toHash() {
         HashMap<String, Object> temp = new HashMap<>();
-        playerDataHashMap.entrySet().forEach(playerDataEntry -> temp.put(playerDataEntry.getKey().getUniqueId().toString(),playerDataEntry.getValue().toHash()));
+        playerDataHashMap.forEach((key, value) -> temp.put(key.getUniqueId().toString(), value.toHash()));
         return temp;
     }
 }

@@ -36,11 +36,6 @@ public class CmdFly implements IAdminCommand {
     }
 
     @Override
-    public int getMinArgs() {
-        return 0;
-    }
-
-    @Override
     public int getMaxArgs() {
         return 1;
     }

@@ -1,14 +1,7 @@
 package org.hugliodev.supersurvival.core;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.hugliodev.supersurvival.Util.ParseMessage;
-
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
 
 public enum Message {
     COMMAND_NOPERMISSION,

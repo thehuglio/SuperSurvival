@@ -1,6 +1,5 @@
 package org.hugliodev.supersurvival.commands;
 
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
@@ -45,7 +44,7 @@ public interface IMainCommand extends TabExecutor {
      */
     default boolean DefaultPermissionOp() {
         return false;
-    };
+    }
 
     /**
      * @return if the command should be displayed

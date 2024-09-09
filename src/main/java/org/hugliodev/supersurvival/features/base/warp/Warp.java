@@ -21,7 +21,7 @@ public class Warp implements DataClass {
             temp.put("location",location.toHash());
             return temp;
         }
-    };
+    }
     private static HashMap<String,warp> warpMap;
 
     public static void setWarp(String name, LocationExtention location,@Nullable String permission) {

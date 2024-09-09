@@ -5,13 +5,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
-import org.hugliodev.supersurvival.core.Message;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.Console;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public interface ICommand extends IMainCommand {
