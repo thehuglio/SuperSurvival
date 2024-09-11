@@ -4,6 +4,7 @@ import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IPermissionCommand;
 import org.hugliodev.supersurvival.core.Message;
+import org.hugliodev.supersurvival.features.Teleport;
 import org.hugliodev.supersurvival.features.LocationExtention;
 import org.hugliodev.supersurvival.playerdata.PlayerData;
 
@@ -63,7 +64,7 @@ public class CmdHome implements IPermissionCommand {
             Message.COMMAND_HOME_NONEXISTING.send(player);
             return;
         }
-        player.teleport(location);
+        new Teleport(player,location);
         player.sendMessage(Message.COMMAND_HOME_TELEPORTED.getMessage().toString(new String[]{"%home%"},new String[]{args[0]}));
     }
 }

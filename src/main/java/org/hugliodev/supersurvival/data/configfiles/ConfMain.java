@@ -18,4 +18,5 @@ public class ConfMain {
     public static List<String> blockedPunishement;
     public static ParseMessage blockedMessage;
     public static String clearChatEnters;
+    public static int teleportCooldown;
 }

@@ -3,6 +3,7 @@ package org.hugliodev.supersurvival.commands.player;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IPermissionCommand;
+import org.hugliodev.supersurvival.features.Teleport;
 import org.hugliodev.supersurvival.features.LocationExtention;
 import org.hugliodev.supersurvival.features.base.warp.Warp;
 
@@ -55,5 +56,6 @@ public class CmdWarp implements IPermissionCommand {
     @Override
     public void execute(Player player, String[] args) {
         LocationExtention warp = Warp.getWarp(player, args[0]);
+        new Teleport(player,warp);
     }
 }

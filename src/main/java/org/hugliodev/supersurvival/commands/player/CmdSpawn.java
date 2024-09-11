@@ -3,6 +3,7 @@ package org.hugliodev.supersurvival.commands.player;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IPermissionCommand;
+import org.hugliodev.supersurvival.features.Teleport;
 import org.hugliodev.supersurvival.features.base.spawn.Spawn;
 
 import java.util.List;
@@ -56,6 +57,6 @@ public class CmdSpawn implements IPermissionCommand {
 
     @Override
     public void execute(Player player, String[] args) {
-        player.teleport(Spawn.getSpawn());
+        new Teleport(player,Spawn.getSpawn());
     }
 }
