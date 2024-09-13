@@ -8,7 +8,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.*;
 
-import static org.hugliodev.supersurvival.data.configfiles.ConfMain.*;
+import static org.hugliodev.supersurvival.data.configfiles.MainConfData.*;
 
 public class ChatItemListing implements IChatUtil {
     public String apply(Player player, String s) {

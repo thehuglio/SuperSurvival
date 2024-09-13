@@ -6,7 +6,7 @@ import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.plugin.Plugin;
 import org.hugliodev.supersurvival.ChatCore.chatutil.*;
 
-import static org.hugliodev.supersurvival.data.configfiles.ConfMain.*;
+import static org.hugliodev.supersurvival.data.configfiles.MainConfData.*;
 
 import java.util.ArrayList;
 import java.util.List;

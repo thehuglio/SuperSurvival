@@ -1,6 +1,7 @@
 package org.hugliodev.supersurvival.data;
 
 import com.google.gson.*;
+import org.bukkit.Bukkit;
 
 import java.io.File;
 import java.io.FileReader;
@@ -14,12 +15,17 @@ public abstract class AData implements IData {
     @Override
     public IData Instance(File file) {
         this.file = file;
-        reload();
+        load();
         return this;
     }
 
     @Override
     public boolean reload() {
+        safeFile();
+        return load();
+    }
+
+    public boolean load() {
         if (file.exists()) {
             try {
                 JsonElement jsonElement = JsonParser.parseReader(new FileReader(file));
@@ -29,7 +35,8 @@ public abstract class AData implements IData {
                         return true;
                     }
                 }
-            } catch (Exception ignore) {
+            } catch (Exception e) {
+                Bukkit.getLogger().info(e.getLocalizedMessage());
                 return false;
             }
         }
@@ -54,7 +61,7 @@ public abstract class AData implements IData {
         return false;
     }
     protected abstract boolean dataDistributor(JsonObject json);
-    abstract HashMap<String,Object> getData();
+    protected abstract HashMap<String,Object> getData();
 }
 
 

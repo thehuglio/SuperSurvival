@@ -3,7 +3,7 @@ package org.hugliodev.supersurvival.features;
 import org.bukkit.Location;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.hugliodev.supersurvival.Main;
-import org.hugliodev.supersurvival.data.configfiles.ConfMain;
+import org.hugliodev.supersurvival.data.configfiles.MainConfData;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.features.passive.CombatTag;
 
@@ -14,7 +14,7 @@ public class Teleport extends BukkitRunnable {
     Player target = null;
     Player player;
     Location loc = null;
-    int cooldown = ConfMain.teleportCooldown;
+    int cooldown = MainConfData.teleportCooldown;
     BukkitRunnable timeOut = new BukkitRunnable() {
         @Override
         public void run() {

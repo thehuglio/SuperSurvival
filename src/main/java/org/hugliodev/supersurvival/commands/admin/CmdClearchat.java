@@ -5,7 +5,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IAdminCommand;
-import org.hugliodev.supersurvival.data.configfiles.ConfMain;
+import org.hugliodev.supersurvival.data.configfiles.MainConfData;
 
 import java.util.List;
 
@@ -55,6 +55,6 @@ public class CmdClearchat implements IAdminCommand {
         execute();
     }
     private void execute() {
-        Bukkit.getOnlinePlayers().forEach(player -> player.sendMessage(ConfMain.clearChatEnters));
+        Bukkit.getOnlinePlayers().forEach(player -> player.sendMessage(MainConfData.clearChatEnters));
     }
 }

@@ -1,6 +1,6 @@
 package org.hugliodev.supersurvival.data;
 
-import org.hugliodev.supersurvival.data.conf.ConfMain;
+import org.hugliodev.supersurvival.data.conf.MainConfDis;
 
 import java.io.File;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ public class DataManager {
         }
     }
     public static void initialize(File dataFile) {
-        dataHashMap.put("MainConf.json",new ConfMain().Instance(new File(dataFile,"MainConf.json")));
+        dataHashMap.put("MainConf.json",new MainConfDis().Instance(new File(dataFile,"MainConf.json")));
         reload();
     }
 }

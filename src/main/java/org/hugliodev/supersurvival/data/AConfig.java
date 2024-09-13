@@ -1,6 +1,7 @@
 package org.hugliodev.supersurvival.data;
 
 import com.google.gson.*;
+import org.bukkit.Bukkit;
 
 import java.io.File;
 import java.io.FileReader;
@@ -30,7 +31,8 @@ public abstract class AConfig implements IData {
                         return true;
                     }
                 }
-            } catch (Exception ignore) {
+            } catch (Exception e) {
+                Bukkit.getLogger().info(e.getLocalizedMessage());
                 return false;
             }
         }

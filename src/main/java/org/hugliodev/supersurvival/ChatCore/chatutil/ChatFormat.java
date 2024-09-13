@@ -2,14 +2,14 @@ package org.hugliodev.supersurvival.ChatCore.chatutil;
 
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.ParseMessage;
-import org.hugliodev.supersurvival.data.configfiles.ConfMain;
+import org.hugliodev.supersurvival.data.configfiles.MainConfData;
 
 public class ChatFormat implements IChatUtil{
     public String apply(Player player, String message) {
-        if (ConfMain.allowplayercollorcodes) {
-            if (ConfMain.allowplayerplaceholders) message = new ParseMessage(message).toString(player);
+        if (MainConfData.allowplayercollorcodes) {
+            if (MainConfData.allowplayerplaceholders) message = new ParseMessage(message).toString(player);
             else message = new ParseMessage(message).toString();
         }
-        return ConfMain.playerchatformat.toString(player,new String[]{"%message%"}, new String[]{message});
+        return MainConfData.playerchatformat.toString(player,new String[]{"%message%"}, new String[]{message});
     }
 }
