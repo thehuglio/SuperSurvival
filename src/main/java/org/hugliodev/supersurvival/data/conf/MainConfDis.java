@@ -49,7 +49,9 @@ public class MainConfDis extends AConfig {
 
     static {
         defaultconfig = new HashMap<>();
-        HashMap<String,Object> chatSettings = new HashMap<>();
+
+        // Chat settings (as implemented previously)
+        HashMap<String, Object> chatSettings = new HashMap<>();
 
         chatSettings.put("enabled", true);
         chatSettings.put("playerchatformat", "%player_name% :");
@@ -80,6 +82,22 @@ public class MainConfDis extends AConfig {
         blockedMessage.add("-------------------------");
         chatSettings.put("blockedMessage", blockedMessage);
 
-        defaultconfig.put("ChatSettings",chatSettings);
+        defaultconfig.put("ChatSettings", chatSettings);
+
+        // CombatTagSettings
+        HashMap<String, Object> combatTagSettings = new HashMap<>();
+        combatTagSettings.put("Enabled", true);
+
+        // List for BlockedCommands
+        List<String> combatTagBlockedCommands = new ArrayList<>();
+        combatTagBlockedCommands.add("/tpa");
+        combatTagSettings.put("BlockedCommands", combatTagBlockedCommands);
+
+        combatTagSettings.put("AllowTeleport", false);
+        combatTagSettings.put("Cooldown", 15);
+        combatTagSettings.put("OnlyTriggeredByPlayer", true);
+
+        defaultconfig.put("CombatTagSettings", combatTagSettings);
+    }
     }
 }
