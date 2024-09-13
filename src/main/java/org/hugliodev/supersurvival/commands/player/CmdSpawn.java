@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IPermissionCommand;
 import org.hugliodev.supersurvival.features.Teleport;
-import org.hugliodev.supersurvival.features.base.spawn.Spawn;
+import org.hugliodev.supersurvival.features.active.spawn.Spawn;
 
 import java.util.List;
 

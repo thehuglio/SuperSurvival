@@ -1,6 +1,8 @@
 package org.hugliodev.supersurvival.data.conf;
 
 import com.google.gson.JsonObject;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.ParseMessage;
 import org.hugliodev.supersurvival.data.AConfig;
 import static org.hugliodev.supersurvival.data.configfiles.ConfMain.*;
@@ -15,7 +17,7 @@ public class ConfMain extends AConfig {
         try {
             System.out.println("test - dataDis");
             JsonObject chatSettings = json.get("ChatSettings").getAsJsonObject();
-
+            JsonObject combatTagSettings = json.get("CombatTagSettings").getAsJsonObject();
             chatEnabled = chatSettings.get("enabled").getAsBoolean();
             playerchatformat = new ParseMessage(chatSettings.get("playerchatformat"));
             allowplayercollorcodes = chatSettings.get("allowplayercollorcodes").getAsBoolean();
@@ -35,6 +37,11 @@ public class ConfMain extends AConfig {
             StringBuilder s = new StringBuilder();
             s.append("\n".repeat(Math.max(0, chatSettings.get("clearChatEnters").getAsInt())));
             clearChatEnters = s.append("The chat has been cleared").toString();
+            combatTagEnable = combatTagSettings.get("Enabled").getAsBoolean();
+            combatTagBlockedCommands = new ParseMessage(combatTagSettings.get("BlockedCommands")).toList();
+            combatTagAllowTeleport = combatTagSettings.get("AllowTeleport").getAsBoolean();
+            combatTagCooldown = combatTagSettings.get("CombatTagCooldown").getAsInt();
+            onlyTriggeredByPlayer = combatTagSettings.get("OnlyTriggeredByPlayer").getAsBoolean();
             return true;
         } catch (Exception e) {
             System.out.println(e);

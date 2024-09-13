@@ -5,6 +5,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.hugliodev.supersurvival.Main;
 import org.hugliodev.supersurvival.data.configfiles.ConfMain;
 import org.bukkit.entity.Player;
+import org.hugliodev.supersurvival.features.passive.CombatTag;
 
 import java.util.LinkedList;
 
@@ -59,11 +60,16 @@ public class Teleport extends BukkitRunnable {
 
     @Override
     public void run() {
+        if (CombatTag.check(player)) {
+            cancel(player);
+            cancel();
+        }
         if (target != null) {
             player.teleport(player);
         } else if (loc != null) {
             player.teleport(loc);
         }
+        kill();
     }
 
     public static void cancel(Player player) {

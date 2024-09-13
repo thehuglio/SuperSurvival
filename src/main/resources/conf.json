@@ -22,5 +22,13 @@
       "-------------------------"
     ],
     "clearChatEnters": 20
+  },
+  "CombatTagSettings": {
+    "Enabled": true,
+    "BlockedCommands": ["/tpa"],
+    "AllowTeleport": false,
+    "Cooldown": 15,
+    "OnlyTriggeredByPlayer": true,
+
   }
 }

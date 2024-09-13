@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IAdminCommand;
 import org.hugliodev.supersurvival.core.Message;
-import org.hugliodev.supersurvival.features.base.enchant.Enchant;
+import org.hugliodev.supersurvival.features.active.enchant.Enchant;
 
 import java.util.List;
 
