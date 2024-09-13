@@ -1,4 +1,7 @@
-.gradle\
-.idea\
-build\
-gradle\
+# Ignore Gradle directories and files
+.gradle/
+build/
+gradle/
+
+# Ignore IntelliJ IDEA project files
+.idea/
