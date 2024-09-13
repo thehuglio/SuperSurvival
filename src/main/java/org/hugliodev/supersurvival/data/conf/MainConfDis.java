@@ -99,5 +99,4 @@ public class MainConfDis extends AConfig {
 
         defaultconfig.put("CombatTagSettings", combatTagSettings);
     }
-    }
 }
