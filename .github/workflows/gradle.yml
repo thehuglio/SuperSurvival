@@ -10,8 +10,18 @@ name: Java CI with Gradle
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - ".gradle"
+      - ".idea"
+      - ".build"
+      - "gradle"
   pull_request:
     branches: [ "main" ]
+    paths-ignore:
+      - ".gradle"
+      - ".idea"
+      - ".build"
+      - "gradle"
 
 jobs:
   build:
