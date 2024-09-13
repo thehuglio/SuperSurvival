@@ -18,10 +18,10 @@ on:
   pull_request:
     branches: [ "main" ]
     paths-ignore:
-      - ".gradle"
-      - ".idea"
-      - ".build"
-      - "gradle"
+      - ".gradle/"
+      - ".idea/"
+      - ".build/"
+      - "gradle/"
 
 jobs:
   build:
