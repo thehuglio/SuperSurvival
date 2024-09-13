@@ -11,10 +11,10 @@ on:
   push:
     branches: [ "main" ]
     paths-ignore:
-      - ".gradle"
-      - ".idea"
-      - ".build"
-      - "gradle"
+      - ".gradle/"
+      - ".idea/"
+      - ".build/"
+      - "gradle/"
   pull_request:
     branches: [ "main" ]
     paths-ignore:
