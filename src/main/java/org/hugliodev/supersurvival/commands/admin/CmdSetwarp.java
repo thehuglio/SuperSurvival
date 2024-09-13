@@ -3,7 +3,7 @@ package org.hugliodev.supersurvival.commands.admin;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IAdminCommand;
-import org.hugliodev.supersurvival.features.LocationExtention;
+import org.hugliodev.supersurvival.Util.LocationExtention;
 import org.hugliodev.supersurvival.features.base.warp.Warp;
 
 import java.util.List;

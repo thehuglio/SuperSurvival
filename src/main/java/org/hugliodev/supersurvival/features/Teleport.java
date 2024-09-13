@@ -20,36 +20,43 @@ public class Teleport extends BukkitRunnable {
             kill();
         }
     };
+
     public Teleport(Player player, Player target) {
         this.player = player;
         this.target = target;
         teleportList.addLast(this);
     }
+
     public Teleport(Player player, Location loc) {
         this.loc = loc;
         this.player = player;
         start();
         teleportList.addLast(this);
     }
+
     public Teleport(Player player, Player target, int cooldown) {
         this.player = player;
         this.target = target;
         this.cooldown = cooldown;
         teleportList.addLast(this);
     }
+
     public Teleport(Player player, Location loc, int cooldown) {
         this.player = player;
         this.loc = loc;
         this.cooldown = cooldown;
         start();
-        teleportList.addLast(this) ;
+        teleportList.addLast(this);
     }
+
     public void kill() {
         teleportList.remove(this);
     }
+
     private void start() {
-        super.runTaskLater(Main.plugin,cooldown);
+        super.runTaskLater(Main.plugin, cooldown);
     }
+
     @Override
     public void run() {
         if (target != null) {
@@ -58,28 +65,40 @@ public class Teleport extends BukkitRunnable {
             player.teleport(loc);
         }
     }
+
     public static void cancel(Player player) {
-        for(Teleport t : teleportList) {
+        for (Teleport t : teleportList) {
             if (t.player == player) {
                 t.timeOut.cancel();
                 teleportList.remove(t);
                 break;
-            }
-            else {
+            } else {
             }
         }
-            //ToDo add messages
+        //ToDo add messages
     }
-    public static void accept(Player player){
-            for (Teleport t : teleportList) {
-                if (t.player == player) {
-                    t.start();
-                    t.timeOut.cancel();
-                    break;
-                }
-                else {
-                }
-                //ToDo add messages
+
+    public static void accept(Player player) {
+        for (Teleport t : teleportList) {
+            if (t.target == player) {
+                t.start();
+                t.timeOut.cancel();
+                break;
+            } else {
             }
+            //ToDo add messages
         }
+    }
+    public static void decline(Player player) {
+        for (Teleport t : teleportList) {
+            if (t.target == player) {
+                t.kill();
+                t.timeOut.cancel();
+                break;
+            } else {
+            }
+            //ToDo add messages
+        }
+    }
+
 }

@@ -6,7 +6,7 @@ import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.features.DataClass;
-import org.hugliodev.supersurvival.features.LocationExtention;
+import org.hugliodev.supersurvival.Util.LocationExtention;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;

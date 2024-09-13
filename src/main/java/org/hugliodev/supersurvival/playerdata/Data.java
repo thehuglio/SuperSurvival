@@ -2,7 +2,7 @@ package org.hugliodev.supersurvival.playerdata;
 
 import com.google.gson.JsonObject;
 import org.bukkit.Location;
-import org.hugliodev.supersurvival.features.LocationExtention;
+import org.hugliodev.supersurvival.Util.LocationExtention;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;

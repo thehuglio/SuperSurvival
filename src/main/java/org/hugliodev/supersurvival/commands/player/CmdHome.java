@@ -5,7 +5,7 @@ import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IPermissionCommand;
 import org.hugliodev.supersurvival.core.Message;
 import org.hugliodev.supersurvival.features.Teleport;
-import org.hugliodev.supersurvival.features.LocationExtention;
+import org.hugliodev.supersurvival.Util.LocationExtention;
 import org.hugliodev.supersurvival.playerdata.PlayerData;
 
 import java.util.List;

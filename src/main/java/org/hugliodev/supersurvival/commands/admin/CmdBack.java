@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IAdminCommand;
 import org.hugliodev.supersurvival.core.Message;
-import org.hugliodev.supersurvival.features.LocationExtention;
+import org.hugliodev.supersurvival.Util.LocationExtention;
 import org.hugliodev.supersurvival.playerdata.PlayerData;
 
 import javax.annotation.Nullable;

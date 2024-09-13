@@ -3,7 +3,7 @@ package org.hugliodev.supersurvival.features.base.spawn;
 import com.google.gson.JsonObject;
 import org.bukkit.Location;
 import org.hugliodev.supersurvival.features.DataClass;
-import org.hugliodev.supersurvival.features.LocationExtention;
+import org.hugliodev.supersurvival.Util.LocationExtention;
 
 import java.util.HashMap;
 
