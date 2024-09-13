@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.hugliodev.supersurvival.commands.admin.AdminCommandRegister;
 import org.hugliodev.supersurvival.commands.player.PlayerCommandRegister;
 
-public finalclass CommandManager {
+public final class CommandManager {
 
     final private static CommandMap playerCommandMap = new PlayerCommandRegister();
     final private static CommandMap adminCommandMap = new AdminCommandRegister();
