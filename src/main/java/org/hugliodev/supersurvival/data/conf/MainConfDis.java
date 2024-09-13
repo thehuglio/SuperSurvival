@@ -14,33 +14,46 @@ public class MainConfDis extends AConfig {
     protected boolean dataDistributor(JsonObject json) {
         try {
             System.out.println("test - dataDis");
+
+            // Parse ChatSettings
             JsonObject chatSettings = json.get("ChatSettings").getAsJsonObject();
-            JsonObject combatTagSettings = json.get("CombatTagSettings").getAsJsonObject();
-            chatEnabled = chatSettings.get("enabled").getAsBoolean();
-            playerchatformat = new ParseMessage(chatSettings.get("playerchatformat"));
-            allowplayercollorcodes = chatSettings.get("allowplayercollorcodes").getAsBoolean();
-            allowplayerplaceholders = chatSettings.get("allowplayerplaceholders").getAsBoolean();
-            chatItemListing = chatSettings.get("chatItemListing").getAsBoolean();
-            chatItemListingFormat = chatSettings.get("chatItemListingFormat").getAsString();
-            chatItemListingReplace = chatSettings.get("chatItemListingReplace").getAsString();
-            bleurBlockedWords = chatSettings.get("bleurBlockedWords").getAsBoolean();
-            bleurToken = chatSettings.get("bleurToken").getAsString();
-            blockedMessage = new ParseMessage(chatSettings.get("blockedMessage"));
+            chatEnabled = chatSettings.get("Enabled").getAsBoolean();
+            playerChatFormat = new ParseMessage(chatSettings.get("PlayerChatFormat"));
+            allowPlayerColorCodes = chatSettings.get("AllowPlayerColorCodes").getAsBoolean();
+            allowPlayerPlaceholders = chatSettings.get("AllowPlayerPlaceholders").getAsBoolean();
+            chatItemListing = chatSettings.get("ChatItemListing").getAsBoolean();
+            chatItemListingFormat = chatSettings.get("ChatItemListingFormat").getAsString();
+            chatItemListingReplace = chatSettings.get("ChatItemListingReplace").getAsString();
+            bleurBlockedWords = chatSettings.get("BleurBlockedWords").getAsBoolean();
+            bleurToken = chatSettings.get("BleurToken").getAsString();
+            blockedMessage = new ParseMessage(chatSettings.get("BlockedMessage"));
 
+            // List for BlockedWords
             blockedWords = new ArrayList<>();
-            chatSettings.get("blockedWords").getAsJsonArray().forEach(jsonElement -> blockedWords.add(jsonElement.getAsString()));
+            chatSettings.get("BlockedWords").getAsJsonArray().forEach(jsonElement -> blockedWords.add(jsonElement.getAsString()));
 
-            blockedPunishement = new ArrayList<>();
-            chatSettings.get("blockedPunishement").getAsJsonArray().forEach(jsonElement -> blockedPunishement.add(jsonElement.getAsString()));
-            clearChatEnters = "\n".repeat(Math.max(0, chatSettings.get("clearChatEnters").getAsInt())) + "The chat has been cleared";
-            combatTagEnable = combatTagSettings.get("Enabled").getAsBoolean();
+            // List for BlockedPunishment
+            blockedPunishment = new ArrayList<>();
+            chatSettings.get("BlockedPunishment").getAsJsonArray().forEach(jsonElement -> blockedPunishment.add(jsonElement.getAsString()));
+
+            clearChatEnters = "\n".repeat(Math.max(0, chatSettings.get("ClearChatEnters").getAsInt())) + "The chat has been cleared";
+
+            // Parse CombatTagSettings
+            JsonObject combatTagSettings = json.get("CombatTagSettings").getAsJsonObject();
+            combatTagEnabled = combatTagSettings.get("Enabled").getAsBoolean();
             combatTagBlockedCommands = new ParseMessage(combatTagSettings.get("BlockedCommands")).toList();
             combatTagAllowTeleport = combatTagSettings.get("AllowTeleport").getAsBoolean();
-            combatTagCooldown = combatTagSettings.get("CombatTagCooldown").getAsInt();
+            combatTagCooldown = combatTagSettings.get("Cooldown").getAsInt();
             onlyTriggeredByPlayer = combatTagSettings.get("OnlyTriggeredByPlayer").getAsBoolean();
+
+            // Parse TeleportSettings
+            JsonObject teleportSettings = json.get("TeleportSettings").getAsJsonObject();
+            teleportEnabled = teleportSettings.get("Enabled").getAsBoolean();
+            teleportCooldown = teleportSettings.get("TeleportCooldown").getAsInt();
+
             return true;
         } catch (Exception e) {
-            System.out.println(e.fillInStackTrace());
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -48,42 +61,46 @@ public class MainConfDis extends AConfig {
     static {
         defaultconfig = new HashMap<>();
 
-        // Chat settings (as implemented previously)
+        // ChatSettings configuration
         HashMap<String, Object> chatSettings = new HashMap<>();
 
-        chatSettings.put("enabled", true);
-        chatSettings.put("playerchatformat", "%player_name% :");
-        chatSettings.put("allowplayercollorcodes", true);
-        chatSettings.put("allowplayerplaceholders", false);
-        chatSettings.put("chatItemListing", true);
-        chatSettings.put("chatItemListingFormat", "[item]");
-        chatSettings.put("chatItemListingReplace", "%material%");
+        chatSettings.put("Enabled", true);
+        chatSettings.put("PlayerChatFormat", "%player_name% : %message%");
+        chatSettings.put("AllowPlayerColorCodes", true);
+        chatSettings.put("AllowPlayerPlaceholders", false);
+        chatSettings.put("ChatItemListing", true);
+        chatSettings.put("ChatItemListingFormat", "[item]");
+        chatSettings.put("ChatItemListingReplace", "%material%");
 
-        // List for blockedWords
+        // List for BlockedWords
         List<String> blockedWords = new ArrayList<>();
-        blockedWords.add("nigger");
-        chatSettings.put("blockedWords", blockedWords);
+        blockedWords.add("Nigger"); // Caution: Usage of this term is strictly for example based on input
+        chatSettings.put("BlockedWords", blockedWords);
 
-        chatSettings.put("bleurBlockedWords", true);
-        chatSettings.put("bleurToken", "*");
+        chatSettings.put("BleurBlockedWords", true);
+        chatSettings.put("BleurToken", "*");
 
-        // List for blockedPunishement
-        List<String> blockedPunishement = new ArrayList<>();
-        blockedPunishement.add("mute %player_name% 20m banned words");
-        chatSettings.put("blockedPunishement", blockedPunishement);
+        // List for BlockedPunishment
+        List<String> blockedPunishment = new ArrayList<>();
+        blockedPunishment.add("Mute %player_name% 20m banned words");
+        chatSettings.put("BlockedPunishment", blockedPunishment);
 
-        // List for blockedMessage
+        // List for BlockedMessage
         List<String> blockedMessage = new ArrayList<>();
-        blockedMessage.add("---------blocked--------");
-        blockedMessage.add("you are not allowed to use %word%");
-        blockedMessage.add("Punishement: 20 minute mute");
+        blockedMessage.add("---------Blocked--------");
+        blockedMessage.add("You are not allowed to use %word%");
+        blockedMessage.add("Punishment: 20 minute mute");
         blockedMessage.add("-------------------------");
-        chatSettings.put("blockedMessage", blockedMessage);
+        chatSettings.put("BlockedMessage", blockedMessage);
+
+        // ClearChatEnters setting
+        chatSettings.put("ClearChatEnters", 20);
 
         defaultconfig.put("ChatSettings", chatSettings);
 
-        // CombatTagSettings
+        // CombatTagSettings configuration
         HashMap<String, Object> combatTagSettings = new HashMap<>();
+
         combatTagSettings.put("Enabled", true);
 
         // List for BlockedCommands
@@ -96,5 +113,18 @@ public class MainConfDis extends AConfig {
         combatTagSettings.put("OnlyTriggeredByPlayer", true);
 
         defaultconfig.put("CombatTagSettings", combatTagSettings);
+
+        // TeleportSettings configuration
+        HashMap<String, Object> teleportSettings = new HashMap<>();
+        teleportSettings.put("Enabled", true);
+        teleportSettings.put("TeleportCooldown", 15);
+
+        defaultconfig.put("TeleportSettings", teleportSettings);
+
+        // BlockedCommandsEnable and BlockedCommands settings (if they exist)
+        List<String> blockedCommands = new ArrayList<>();
+        blockedCommands.add("/ban");
+        blockedCommands.add("/kick");
+        defaultconfig.put("BlockedCommands", blockedCommands);
     }
 }
