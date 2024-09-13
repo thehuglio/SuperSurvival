@@ -32,9 +32,7 @@ public class MainConfDis extends AConfig {
 
             blockedPunishement = new ArrayList<>();
             chatSettings.get("blockedPunishement").getAsJsonArray().forEach(jsonElement -> blockedPunishement.add(jsonElement.getAsString()));
-            StringBuilder s = new StringBuilder();
-            s.append("\n".repeat(Math.max(0, chatSettings.get("clearChatEnters").getAsInt())));
-            clearChatEnters = s.append("The chat has been cleared").toString();
+            clearChatEnters = "\n".repeat(Math.max(0, chatSettings.get("clearChatEnters").getAsInt())) + "The chat has been cleared";
             combatTagEnable = combatTagSettings.get("Enabled").getAsBoolean();
             combatTagBlockedCommands = new ParseMessage(combatTagSettings.get("BlockedCommands")).toList();
             combatTagAllowTeleport = combatTagSettings.get("AllowTeleport").getAsBoolean();
@@ -42,7 +40,7 @@ public class MainConfDis extends AConfig {
             onlyTriggeredByPlayer = combatTagSettings.get("OnlyTriggeredByPlayer").getAsBoolean();
             return true;
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.fillInStackTrace());
             return false;
         }
     }
