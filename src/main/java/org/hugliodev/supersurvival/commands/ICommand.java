@@ -16,10 +16,12 @@ public interface ICommand extends IMainCommand {
 
     @Override
     default boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+        if (args.length < getMinArgs()) return false;
+        if (args.length > getMaxArgs()) return false;
         if (sender instanceof Player player) {
             execute(player,label,args);
             return true;
-        } else if (sender instanceof ConsoleCommandSender console) {
+        } else if (sender instanceof ConsoleCommandSender console && canBeExecutedByConsole()) {
             execute(console,label,args);
         }
         return true;

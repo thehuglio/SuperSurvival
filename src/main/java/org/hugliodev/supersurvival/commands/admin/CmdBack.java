@@ -1,5 +1,6 @@
 package org.hugliodev.supersurvival.commands.admin;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IAdminCommand;
@@ -28,7 +29,7 @@ public class CmdBack implements IAdminCommand {
 
     @Override
     public String getUsage() {
-        return "/back";
+        return "/back <player>";
     }
 
     @Override
@@ -54,6 +55,21 @@ public class CmdBack implements IAdminCommand {
 
     @Override
     public void execute(Player player, String[] args) {
+        if (args.length > 0) {
+            Player p = Bukkit.getPlayer(args[0]);
+            if (p != null) {
+                LocationExtention lastloc = PlayerData.getLastLoc(p);
+                if (lastloc == null) {
+                    Message.COMMAND_BACK_NOLOCATION.send(p);
+                    return;
+                }
+                player.teleport(PlayerData.getLastLoc(p));
+                Message.COMMAND_BACK_FINISH.send(p);
+            }
+            else {
+                //todo add message
+            }
+        }
         LocationExtention lastloc = PlayerData.getLastLoc(player);
         if (lastloc == null) {
             Message.COMMAND_BACK_NOLOCATION.send(player);

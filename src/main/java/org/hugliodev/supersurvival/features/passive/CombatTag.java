@@ -34,7 +34,7 @@ public class CombatTag extends BukkitRunnable implements Listener {
         }
     }
     @EventHandler
-    private static void playerhit(EntityDamageByEntityEvent event) {
+    private static void playerHit(EntityDamageByEntityEvent event) {
         if ((MainConfData.onlyTriggeredByPlayer || event.getDamager() instanceof Player) && event.getEntity() instanceof Player player && !player.isOp()) {
             if (!tagged.containsKey(player)) tagged.put(player,new CombatTag(player));
             else tagged.get(player).timer = MainConfData.combatTagCooldown;
