@@ -5,6 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.plugin.Plugin;
 import org.hugliodev.supersurvival.ChatCore.chatutil.*;
+import org.hugliodev.supersurvival.playerdata.PlayerData;
 
 import static org.hugliodev.supersurvival.data.configfiles.MainConfData.*;
 
@@ -34,14 +35,20 @@ public class ChatCoreManager implements Listener {
 
     @EventHandler
     private void getMessages(PlayerChatEvent event) {
-        System.out.println(event.getMessage());
-        AtomicReference<String> s = new AtomicReference<>(event.getMessage());
-        chatCoreMessageActions.forEach(i -> {
-            s.set(i.use(event.getPlayer(), s.get()));
-            System.out.println(s.get());
-        });
-        event.setMessage(s.get());
-        System.out.println(s.get());
+        if (PlayerData.getSC(event.getPlayer())) {
+            AtomicReference<String> s = new AtomicReference<>(event.getMessage());
+            chatCoreMessageActions.forEach(i -> {
+                if (!(i instanceof ChatFormat)) s.set(i.use(event.getPlayer(), s.get()));
+            });
+            PlayerChatEvent event1 = StaffChat.staffChat(event, s.toString());
+            event.getRecipients().retainAll(event1.getRecipients());
+            event.setFormat(event1.getFormat());
+        } else {
+            AtomicReference<String> s = new AtomicReference<>(event.getMessage());
+            chatCoreMessageActions.forEach(i -> {
+                s.set(i.use(event.getPlayer(), s.get()));
+            });
+            event.setFormat(s.get());
+        }
     }
-
 }

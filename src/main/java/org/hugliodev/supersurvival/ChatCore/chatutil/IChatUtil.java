@@ -9,7 +9,6 @@ public interface IChatUtil {
                 //todo add nopermission logic
             }
         }
-        System.out.println("test -- chatutil -- " + s);
         return apply(p,s);
     }
     default String apply(Player player,String s) {

@@ -13,6 +13,8 @@ public class Data {
     private Location lastLoc;
     @Nullable public LocationExtention mainHome;
     private final HashMap<String, LocationExtention> playerHomes;
+    public boolean sc = false;
+
 
     public Data(@Nullable Location location, @Nullable LocationExtention mainHome, @Nullable HashMap<String,LocationExtention> playerHomes, @Nullable LocationExtention spawn) {
         this.lastLoc = location;
@@ -63,5 +65,13 @@ public class Data {
         temp.put("Homes",homes);
         temp.put("MainHome",mainHome.toHash());
         return temp;
+    }
+
+    public boolean getSc() {
+        return sc;
+    }
+
+    public void toggleSc() {
+        sc = !sc;
     }
 }

@@ -60,6 +60,7 @@ public class CmdGamemode implements IAdminCommand {
         else if (s.equalsIgnoreCase("gms")) player.setGameMode(GameMode.SURVIVAL);
         else if (s.equalsIgnoreCase("gmc")) player.setGameMode(GameMode.CREATIVE);
         else if (s.equalsIgnoreCase("gmsp")) player.setGameMode(GameMode.SPECTATOR);
+        else if (s.equalsIgnoreCase("gamemode")) player.sendMessage("your gamemode is " + player.getGameMode());
         else {
             Message.COMMAND_GAMEMODE_NONEXISTING.send(player);
             return;

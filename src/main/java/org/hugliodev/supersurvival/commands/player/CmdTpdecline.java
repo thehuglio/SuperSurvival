@@ -7,10 +7,10 @@ import org.hugliodev.supersurvival.features.Teleport;
 
 import java.util.List;
 
-public class CmdTpd implements IPermissionCommand {
+public class CmdTpdecline implements IPermissionCommand {
     @Override
     public String getCommand() {
-        return "tpd";
+        return "tpdecline";
     }
 
     @Override

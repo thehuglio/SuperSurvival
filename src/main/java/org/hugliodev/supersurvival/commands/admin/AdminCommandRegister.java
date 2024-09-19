@@ -14,5 +14,7 @@ public class AdminCommandRegister extends CommandMap {
         register(new CmdSetwarp());
         register(new CmdSetspawn());
         register(new CmdTeleport());
+        register(new CmdStaffChat());
+        register(new CmdScToggle());
     }
 }

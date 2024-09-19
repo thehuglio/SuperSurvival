@@ -6,6 +6,7 @@ import java.util.List;
 
 public class MainConfData {
     // Chat Settings
+    public static ParseMessage staffChatFormat;
     public static boolean chatEnabled;
     public static ParseMessage playerChatFormat;
     public static boolean allowPlayerColorCodes;

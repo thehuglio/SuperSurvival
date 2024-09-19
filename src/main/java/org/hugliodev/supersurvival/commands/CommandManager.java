@@ -19,23 +19,25 @@ public final class CommandManager {
         }
         for (IMainCommand command : playerCommandMap.commandList) {
             PluginCommand Bcommand = plugin.getServer().getPluginCommand(command.getCommand());
+            System.out.println(Bcommand.toString());
             Bcommand.setAliases(command.getAliases());
             Bcommand.setDescription(command.getDescription());
             Bcommand.setUsage(command.getUsage());
             if (command instanceof IPermissionCommand pcommand) {
                 Bcommand.setPermission("supersurvival.cmd." + pcommand.getPermission());
-                Bcommand.setPermissionMessage(pcommand.noPermission().toString());
+                if (pcommand.noPermission() != null) Bcommand.setPermissionMessage(pcommand.noPermission().toString());
             }
             Bcommand.setExecutor(command);
         }
         for (IMainCommand command : adminCommandMap.commandList) {
             PluginCommand Bcommand = Bukkit.getServer().getPluginCommand(command.getCommand());
+            System.out.println(Bcommand.toString());
             Bcommand.setAliases(command.getAliases());
             Bcommand.setDescription(command.getDescription());
             Bcommand.setUsage(command.getUsage());
             if (command instanceof IPermissionCommand pcommand) {
                 Bcommand.setPermission("supersurvival.cmd." + pcommand.getPermission());
-                Bcommand.setPermissionMessage(pcommand.noPermission().toString());
+                if (pcommand.noPermission() != null) Bcommand.setPermissionMessage(pcommand.noPermission().toString());
             }
             Bcommand.setExecutor(command);
         }

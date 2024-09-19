@@ -4,3 +4,29 @@ main: org.hugliodev.supersurvival.Main
 api-version: '1.21'
 depend:
   - PlaceholderAPI
+
+commands:
+  #admin
+  back:
+  clearchat:
+  enchant:
+  fly:
+  gamemode:
+  lockchat:
+  reload:
+  sctoggle:
+  sc:
+  tp:
+
+  #player
+  help:
+  home:
+  loc:
+  msg:
+  sethome:
+  spawn:
+  tpa:
+  tpaccept:
+  tpcancel:
+  tpdecline:
+  warp:

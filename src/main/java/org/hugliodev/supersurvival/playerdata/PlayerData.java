@@ -48,4 +48,10 @@ public class PlayerData implements DataClass {
         playerDataHashMap.forEach((key, value) -> temp.put(key.getUniqueId().toString(), value.toHash()));
         return temp;
     }
+    public static boolean getSC(Player player) {
+        return playerDataHashMap.get(player).getSc();
+    }
+    public static void toggleSc(Player player) {
+        playerDataHashMap.get(player).toggleSc();
+    }
 }
