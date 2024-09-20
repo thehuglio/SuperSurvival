@@ -30,6 +30,7 @@ public final class CommandManager {
             Bcommand.setExecutor(command);
         }
         for (IMainCommand command : adminCommandMap.commandList) {
+            System.out.println(command.getCommand());
             PluginCommand Bcommand = Bukkit.getServer().getPluginCommand(command.getCommand());
             System.out.println(Bcommand.toString());
             Bcommand.setAliases(command.getAliases());

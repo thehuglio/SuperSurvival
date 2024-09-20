@@ -13,10 +13,12 @@ commands:
   fly:
   gamemode:
   lockchat:
-  reload:
+  supersurvivalreload:
   sctoggle:
-  sc:
   tp:
+  setwarp:
+  setspawn:
+  staffchat:
 
   #player
   help:

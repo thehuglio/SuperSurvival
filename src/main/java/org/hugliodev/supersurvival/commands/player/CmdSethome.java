@@ -3,7 +3,7 @@ package org.hugliodev.supersurvival.commands.player;
 import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IPermissionCommand;
-import org.hugliodev.supersurvival.playerdata.PlayerData;
+import org.hugliodev.supersurvival.data.datafiles.playerdata.PlayerData;
 
 import java.util.List;
 

@@ -10,7 +10,7 @@ public class AdminCommandRegister extends CommandMap {
         register(new CmdFly());
         register(new CmdGamemode());
         register(new CmdLockchat());
-        register(new CmdReload());
+        register(new CmdSuperSurvivalReload());
         register(new CmdSetwarp());
         register(new CmdSetspawn());
         register(new CmdTeleport());

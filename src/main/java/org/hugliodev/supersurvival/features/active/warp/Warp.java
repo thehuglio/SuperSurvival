@@ -2,7 +2,7 @@ package org.hugliodev.supersurvival.features.active.warp;
 
 import com.google.gson.JsonObject;
 import org.bukkit.entity.Player;
-import org.hugliodev.supersurvival.features.DataClass;
+import org.hugliodev.supersurvival.data.datafiles.DataClass;
 import org.hugliodev.supersurvival.Util.LocationExtention;
 
 import javax.annotation.Nullable;

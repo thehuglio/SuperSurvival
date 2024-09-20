@@ -6,7 +6,7 @@ import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IAdminCommand;
 import org.hugliodev.supersurvival.core.Message;
 import org.hugliodev.supersurvival.Util.LocationExtention;
-import org.hugliodev.supersurvival.playerdata.PlayerData;
+import org.hugliodev.supersurvival.data.datafiles.playerdata.PlayerData;
 
 import javax.annotation.Nullable;
 import java.util.List;

@@ -1,42 +1,49 @@
 package org.hugliodev.supersurvival.commands.admin;
 
-import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IAdminCommand;
-import org.hugliodev.supersurvival.data.datafiles.playerdata.PlayerData;
 
 import java.util.List;
 
-public class CmdScToggle implements IAdminCommand {
-
+public class CmdSuperSurvivalReload implements IAdminCommand {
     @Override
     public String getPermission() {
-        return "sctoggle";
+        return "reload";
     }
 
     @Override
     public String getCommand() {
-        return "sctoggle";
+        return "supersurvivalreload";
     }
 
     @Override
     public List<String> getAliases() {
-        return List.of("sctoggle","staffchattoggle");
+        return List.of("supersurvivalreload");
     }
 
     @Override
     public String getUsage() {
-        return "/sctoggle";
+        return "/supersurvivalreload";
     }
 
     @Override
     public String getDescription() {
-        return "toggle staffchat";
+        return "";
+    }
+
+    @Override
+    public int getMinArgs() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxArgs() {
+        return 0;
     }
 
     @Override
     public boolean canBeExecutedByConsole() {
-        return false;
+        return true;
     }
 
     @Override
@@ -45,7 +52,7 @@ public class CmdScToggle implements IAdminCommand {
     }
 
     @Override
-    public void execute(Player player, String[] args) {
-        PlayerData.toggleSc(player);
+    public boolean displayCommand() {
+        return false;
     }
 }

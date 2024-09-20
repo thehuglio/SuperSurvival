@@ -5,9 +5,8 @@ import org.bukkit.entity.Player;
 import org.hugliodev.supersurvival.ChatCore.chatutil.StaffChat;
 import org.hugliodev.supersurvival.Util.SurgestionSafe;
 import org.hugliodev.supersurvival.commands.IAdminCommand;
-import org.hugliodev.supersurvival.playerdata.PlayerData;
+import org.hugliodev.supersurvival.data.datafiles.playerdata.PlayerData;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class CmdStaffChat implements IAdminCommand {

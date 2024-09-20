@@ -5,7 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.plugin.Plugin;
 import org.hugliodev.supersurvival.ChatCore.chatutil.*;
-import org.hugliodev.supersurvival.playerdata.PlayerData;
+import org.hugliodev.supersurvival.data.datafiles.playerdata.PlayerData;
 
 import static org.hugliodev.supersurvival.data.configfiles.MainConfData.*;
 
